@@ -8,7 +8,10 @@ x-defaults: &defaults
 
 services:
   web:
-    image: dairoot/chatgpt-mirror:latest
+    #image: dairoot/chatgpt-mirror:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - CHATGPT_GATEWAY_URL=http://gateway:8787
     ports:

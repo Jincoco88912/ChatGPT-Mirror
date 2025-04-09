@@ -2,7 +2,7 @@
   <div>
     <t-dialog
       :visible="tableVisible"
-      header="请选择 ChatGPT 账号"
+      header="請選擇 ChatGPT 帳號"
       :cancel-btn="null"
       :confirm-btn="null"
       :on-close="onClose"
@@ -36,10 +36,10 @@
                 <div style="font-size: 12px; display: flex; justify-content: space-between">
                   <div>实时状态</div>
                   <div>
-                    <span v-if="item.auth_status === false"> 已过期 </span>
-                    <span v-else-if="getGPTUsePercent(item) < 40"> 空闲 </span>
+                    <span v-if="item.auth_status === false"> 已過期 </span>
+                    <span v-else-if="getGPTUsePercent(item) < 40"> 閒置 </span>
                     <span v-else-if="getGPTUsePercent(item) < 80"> 忙碌 </span>
-                    <span v-else> 繁忙 | 可用 </span>
+                    <span v-else> 繁忙 | 可使用 </span>
                   </div>
                 </div>
 
@@ -83,8 +83,8 @@
 
             <template #action>
               <div>
-                <t-tag v-if="item.auth_status === false" theme="danger" variant="light"> 已过期 </t-tag>
-                <t-tag v-else-if="item.use_count.last_1h + item.use_count.last_2h + item.use_count.last_3h < 20" theme="success" variant="light"> 空闲 </t-tag>
+                <t-tag v-if="item.auth_status === false" theme="danger" variant="light"> 已過期 </t-tag>
+                <t-tag v-else-if="item.use_count.last_1h + item.use_count.last_2h + item.use_count.last_3h < 20" theme="success" variant="light"> 空閒 </t-tag>
                 <t-tag v-else theme="warning" variant="light"> 繁忙 </t-tag>
               </div>
             </template>
